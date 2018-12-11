@@ -1,8 +1,5 @@
 # Checkers
 
-Test
-
-
-
-heee job hee robin
+git add .
+git commit -m "naamupdate"
 
