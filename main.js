@@ -74,10 +74,10 @@ window.onload = function(){
 
         //tests if piece can jump anywhere
         this.canJumpAny = function () {
-            if(this.canOpponentJump([this.place[0]+2, this.place[1]+2]) ||
-            this.canOpponentJump([this.place[0]+2, this.place[1]-2]) ||
-            this.canOpponentJump([this.place[0]-2, this.place[1]+2]) ||
-            this.canOpponentJump([this.place[0]-2, this.place[1]-2])) {
+            if(this.canEnemyJump([this.place[0]+2, this.place[1]+2]) ||
+            this.canEnemyJump([this.place[0]+2, this.place[1]-2]) ||
+            this.canEnemyJump([this.place[0]-2, this.place[1]+2]) ||
+            this.canEnemyJump([this.place[0]-2, this.place[1]-2])) {
             return true;
             }   
         return false;
@@ -212,7 +212,7 @@ window.onload = function(){
             var inRange = tile.inRange(piece);
             if(inRange){
                 if(inRange == 'jump'){
-                    if(piece.opponentJump(tile)){
+                    if(piece.enemyJump(tile)){
                         piece.move(tile);
                         if(piece.canJumpAny()){
                             //now the same person can make another turn, which he has right to
@@ -226,7 +226,7 @@ window.onload = function(){
                         piece.move(tile);
                     }
                     else{
-                        alert("If you can slay an opponents' piece you have to!")
+                        alert("If you can slay an enemys' piece you have to!")
                     }
                 }
             }
