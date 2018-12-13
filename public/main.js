@@ -156,7 +156,7 @@ window.onload = function(){
 
     //calculate distance between places
     var distance = function (x1, y1, x2, y2){
-        var calculate1 = Math.pow(x1-x2) + Math.pow(y1-y2);
+        var calculate1 = Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2);
         return Math.sqrt(calculate1);
     }
 
