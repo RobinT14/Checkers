@@ -24,7 +24,30 @@ this.move = function(tile){
     }
 
     //make sure the tile doesn't make a move backwards
-    if(this.player == 1 && this.king == flase){
-        if(tile.place[0] < )
+    if(this.player == 1 && this.king == false){
+        if(tile.place[0] < this.place[0]){
+            return false;
+        }
     }
-}
+        else if(this.player == 2 && this.king == false){
+            if(tile.place[0] > this.place[0]){
+                return false;
+            }
+         }
+    
+    //remove the mark from Game.board
+    Game.board[this.place[0]][this.place[1]] = 0;
+    Game.board[tile.place[0]][tile.place[1]] = this.player;
+    this.place = [tile.place[0], tile.place[1]];
+
+    //change the css
+    this.object.css("top", Game[this.place[0]]);
+    this.object.css("left", Game[this.place[1]]);
+
+    //if the piece reaches the end on the opposide side; the piece will be a king
+    if(!this.king && (this.place[0] ==0 || this.position[0] == 7)){
+        this.makeKing();
+    }
+    Game.changePlayerTurn();
+    return true;
+};
