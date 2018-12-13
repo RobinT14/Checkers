@@ -91,12 +91,12 @@ window.onload = function(){
 
                 //Make sure the tile doesn't make a move backwards
                 if(this.player == 1 && this.bigPiece == false){
-                    if(new.place[0] < this.place[0]){
+                    if(newPlace[0] < this.place[0]){
                     return false;
                     }
                 }
                 else if(this.player == 2 && this.bigPiece == false){
-                    if(new.place[0] > this.place[0]){
+                    if(newPlace[0] > this.place[0]){
                     return false;
                     }
                 }
