@@ -236,7 +236,7 @@ window.onload = function(){
         },
         reset: function(){
             location.reload();
-        }
+        },
     }
 
     Game.setup();
