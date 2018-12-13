@@ -4,8 +4,8 @@ body {
 #board {
     position: absolute;
     top: calc(25%);
-    left: calc(50% - 40vmin);
-    width: 80vmin;
+    left: calc(25%);
+    width: 50%;
     height: 80vmin;
     border-radius: 5px;
     box-shadow: 1px 1px 3px #232621;
