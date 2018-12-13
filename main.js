@@ -11,4 +11,5 @@ windows.onload = function(){
     ];
 
     $("board").append(gameBoard);
+    alert("hi");
 }
