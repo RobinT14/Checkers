@@ -9,7 +9,7 @@ body {
     height: 80vmin;
     background-color: #B93848;
 }
-.player1pieces .piece{
+.player1pieces{
     position: absolute;
     width: 8vmin;
     height: 8vmin;
