@@ -7,7 +7,7 @@ body {
     left: 30vw;
     width: 40vw;
     height: 40vw;
-    background-color: #16A8C7;
+    background-color: rgb(255, 255, 255);
 }
 .player1pieces .piece{
     position: absolute;
