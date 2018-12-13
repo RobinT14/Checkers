@@ -49,4 +49,11 @@ body {
     background-color: black;
     position: absolute;
 }
+
+.piece.selected {
+    width: 5vw;
+    height: 5vw;
+    margin-top: 0vw;
+    margin-left: 0vw;
+}
     
