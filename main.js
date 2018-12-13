@@ -90,12 +90,12 @@ window.onload = function(){
                 var dy = newplace[0] = this.place[0];
 
                 //Make sure the tile doesn't make a move backwards
-                if(this.player == "1" && this.bigpiece == false){
+                if(this.player == 1 && this.bigpiece == false){
                     if(new.place[0] < this.place[0]){
                     return false;
                     }
                 }
-                else if(this.player == "2" && this.bigpiece == false){
+                else if(this.player == 2 && this.bigpiece == false){
                     if(new.place[0] > this.place[0]){
                     return false;
                     }
