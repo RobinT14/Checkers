@@ -22,10 +22,10 @@ window.onload = function(){
         this.place = place;
                 
         if(this.element.attr("id") < 12){
-            this.player = "player1";
+            this.player = 1;
         }
         else{
-            this.player = "player2";
+            this.player = 2;
         }
 
         //check whether it is a big piece or not
@@ -44,12 +44,12 @@ window.onload = function(){
             }   
 
              //make sure the tile doesn't make a move backwards
-            if(this.player == "player1" && this.bigPiece == false){
+            if(this.player == 1 && this.bigPiece == false){
                 if(tile.place[0] < this.place[0]){
                 return false;
                 }
             }
-            else if(this.player == "player2" && this.bigPiece == false){
+            else if(this.player == 2 && this.bigPiece == false){
                 if(tile.place[0] > this.place[0]){
                 return false;
             }
@@ -155,13 +155,13 @@ window.onload = function(){
             return false;
         },
         changeTurn: function () {
-            if(this.playerTurn == "player1") {
-              this.playerTurn = "player2";
+            if(this.playerTurn == 1) {
+              this.playerTurn = 2;
               $('.turn').css("background", "linear-gradient(to right, transparent 50%, #BEEE62 50%)");
               return;
             }
-            if(this.playerTurn == "player1") {
-              this.playerTurn = "player2";
+            if(this.playerTurn == 1) {
+              this.playerTurn = 2;
               $('.turn').css("background", "linear-gradient(to right, #BEEE62 50%, transparent 50%)");
             }
         },
