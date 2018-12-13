@@ -28,7 +28,8 @@ window.onload = function(){
         }
         this.bigPiece = false;
         this.becomeBigPiece = function(){
-            
+            this.bigPiece = true;
+            //update design
         }
     }
 
