@@ -45,7 +45,7 @@ body {
     border: 1vmin solid #2600ff; 
 }
 
-.tiles{
+.tile{
     width: 5vw;
     height: 5vw;
     background-color: black;
