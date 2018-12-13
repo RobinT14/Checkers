@@ -205,7 +205,7 @@ window.onload = function(){
                     //how to place the pieces on the board: for player 1
                     }
                     if(this.board[row][column] == 1) {
-                        $('.player1pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary.[column]+";'></div>");
+                        $('.player1pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                     }
