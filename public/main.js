@@ -85,7 +85,7 @@ window.onload = function(){
             };
 
             //tests if enemeny could made a specific jump
-            this.CanEnemyJump = function(newPlace){
+            this.canEnemyJump = function(newPlace){
                 //find the x-movement and y-movement
                 var dx = newPlace[1] - this.place[1];
                 var dy = newPlace[0] - this.place[0];
