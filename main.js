@@ -20,17 +20,26 @@ window.onload = function(){
     function piece (object, place){
         this.object = object;
         this.place = place;
+        
+        
         if(this.object.attr("id") < 12){
             this.player = "player1";
         }
         else{
             this.player = "player2";
         }
+        
+        
         //check whether it is a big piece or not
         this.bigPiece = false;
         this.becomeBigPiece = function(){
             this.bigPiece = true;
             //update design
+        }
+
+        //move the piece
+        this.move = function(tile){
+            //make the tile move
         }
     }
 
