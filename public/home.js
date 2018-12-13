@@ -7,7 +7,7 @@ $("#play").on("click", function() {
 
 //play battle royal button
 $("#Battle").on("click", function() {
-   alert("Battle Royal Mode hasn't been released yet");
+   window.alert("Battle Royal Mode hasn't been released yet");
 });
 
 }
