@@ -35,7 +35,7 @@ body {
     background-size: 65%;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 6vmin;
+    border-radius: 6vw;
     display: inline-block;
     box-sizing: border-box;
     transition: all 0.2s linear;
