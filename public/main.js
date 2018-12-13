@@ -270,7 +270,7 @@ window.onload = function(){
     });
 
     var Leave = {
-        play: function (){
+        leave: function (){
             window.location.href = "Splash.html";
         }
     }
