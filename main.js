@@ -93,7 +93,7 @@ window.onload = function(){
     //look if tile is in range for  a possible move
         this.inRange = function(piece){
         //look if move is just 1 tile; Pythagoras 1;1;sqrt(2)
-        if(dispatchEvent(this.place[0], this.place[1], piece.place[0] piece.place[1] == Math.sqrt(2))){
+        if(dispatchEvent(this.place[0], this.place[1], piece.place[0], piece.place[1] == Math.sqrt(2))){
             return "regular"; // regular move
         }
         //look if move is over an enemy; Pythagoras 2;2;sqrt(8)
