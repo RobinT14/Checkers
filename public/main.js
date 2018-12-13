@@ -110,7 +110,7 @@ window.onload = function(){
                 var tileToChecky = this.place[0] + dy/2;
     
                 //check is there is a piece and there is no piece after that piece
-                if(!Game.isValidPlacetoMove(tileToChecky, tileToChecky) && Gamepad.isValidPlacetoMove(newPlace[0], newPlace[1])){
+                if(!Game.Hasanelement(tileToChecky, tileToChecky) && Game.Hasanelement(newPlace[0], newPlace[1])){
                     //find which piece
                     for(pieceIndex in pieces){
                         if(pieces[pieceIndex].place[0] == tileToChecky && pieces[pieceIndex].place[1] == tileToCheckx) {
