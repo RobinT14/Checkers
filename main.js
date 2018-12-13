@@ -87,7 +87,7 @@ window.onload = function(){
             this.CanEnemyJump = function(newplace){
                 //find the x-movement and y-movement
                 var dx = newplace[1] - this.place[1];
-                var dy = newplace[0] = this.place[0];
+                var dy = newplace[0] - this.place[0];
 
                 //Make sure the tile doesn't make a move backwards
                 if(this.player == 1 && this.bigPiece == false){
