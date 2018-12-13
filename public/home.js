@@ -4,8 +4,11 @@ window.onload = function(){
 $("#play").on("click", function() {
     Game.play();
 });
-play: function (){
-    location.reload();
+
+var Splash ={
+    play: function (){
+        location.reload();
+    }
 }
 
 //play battle royal button
