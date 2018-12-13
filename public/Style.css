@@ -50,7 +50,7 @@ body {
     position: absolute;
 }
 
-.piece.selected {
+.selected {
     width: 5vw;
     height: 5vw;
     margin-top: 0vw;
