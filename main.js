@@ -84,10 +84,10 @@ window.onload = function(){
             };
 
             //tests if enemeny could made a specific jump
-            this.CanEnemyJump = function(newplace){
+            this.CanEnemyJump = function(newPlace){
                 //find the x-movement and y-movement
-                var dx = newplace[1] - this.place[1];
-                var dy = newplace[0] - this.place[0];
+                var dx = newPlace[1] - this.place[1];
+                var dy = newPlace[0] - this.place[0];
 
                 //Make sure the tile doesn't make a move backwards
                 if(this.player == 1 && this.bigPiece == false){
@@ -111,7 +111,7 @@ window.onload = function(){
             var tileToChecky = this.place[0] + dy/2;
 
             //check is there is a piece and there is no piece after that piece
-            if(!Gamepad.isValidPlacetoMove(tileToChecky, tileToChecky) && Gamepad.isValidPlacetoMove(newplace[0], newplace[1])){
+            if(!Gamepad.isValidPlacetoMove(tileToChecky, tileToChecky) && Gamepad.isValidPlacetoMove(newPlace[0], newPlace[1])){
                 //find which piece
                 for(pieceIndex in pieces){
                     if(pieces[pieceIndex].place[0] == tileToChecky && pieces[pieceIndex].place[1] == tileToCheckx) {
