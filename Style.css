@@ -4,7 +4,7 @@ body {
 #board {
     position: absolute;
     top: 15%;
-    left: 20vmin;
+    left: 20vw;
     width: 80vmin;
     height: 80vmin;
     background-color: #16A8C7;
