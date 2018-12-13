@@ -182,6 +182,7 @@ window.onload = function(){
         board: gameBoard,
         turn: 1,
         tilesElement: $(".tiles"),
+        dictionary: ["0vw", "5vw", "10vw", "15vw", "20vw", "25vw", "30vw", "35vw", "40vw"],
         //fill the board
         setup: function() {
             var amountofpieces = 0;
@@ -204,7 +205,7 @@ window.onload = function(){
                     //how to place the pieces on the board: for player 1
                     }
                     if(this.board[row][column] == 1) {
-                        $('.player1pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top: "this.[row]"; left: "this.[column]";'></div>");
+                        $('.player1pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top: "this.dictionary[row]"; left: "this.dictionary.[column]";'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                     }
