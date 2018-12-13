@@ -19,7 +19,7 @@ window.onload = function(){
     
 
     //function to set pieces to the board
-    function piece (object, place){
+    function Piece (object, place){
         this.object = object;
         this.place = place;
         
@@ -55,16 +55,16 @@ window.onload = function(){
 
     //check if a move is possible
     function Tile (object, place){
-    this.object = object; // linked DOm element
+    this.object = object; // linked DOm object
     this.place = place; //place on the board
     //look if tile is in range for  a possible move
         this.inRange = function(piece){
         //look if move is just 1 tile; Pythagoras 1;1;sqrt(2)
-        if(dispatchEvent(this.position[0], this.position[1], piece.position[0] piece.position[1] == Math.sqrt(2))){
+        if(dispatchEvent(this.place[0], this.place[1], piece.place[0] piece.place[1] == Math.sqrt(2))){
             return "regular"; // regular move
-        };
+        }
         //look if move is over an enemy; Pythagoras 2;2;sqrt(8)
-        else if(dispatchEvent(this.position[0], this.position[1], piece.position[0], piece.position[1]) ==  Math.sqrt(8)){
+        else if(dispatchEvent(this.place[0], this.place[1], piece.place[0], piece.place[1]) ==  Math.sqrt(8)){
         return "Jump";
             }
         }
@@ -76,7 +76,41 @@ window.onload = function(){
         turn: player1,
         tilesObject: $(".tiles")
         //fill the board
-        
+        setup: function() {
+            var amountofpieces = 0;
+            var amountoftiles = 0;
+            for(row in this.board){
+                for(column in this.board[row])
+                //algorithm on how the tiles should be placed on the board: for every odd row
+                if(row%2 == 1) {
+                    //where the column is even
+                    if(column%2 == 0) {
+                      this.tilesObject.append("<div class='tile' id='tile"+amountoftiles+"' style='top:;left:;'></div>");
+                      tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
+                      amountoftiles += 1;
+                    }
+                    //where the column is odd
+                    if(column%2 == 1) {
+                        this.tilesObject.append("<div class='tile' id='tile"+amountoftiles+"' style='top:;left:;'></div>");
+                        tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
+                        amountoftiles += 1;
+                    //how to place the pieces on the board: for player 1
+                    }
+                    if(this.board[row][column] == 1) {
+                        $('.player1pieces').append("<div class='tile' id='tile"+amountofpieces+"' style='top:;left:;'></div>");
+                        tiles[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
+                        amountofpieces += 1;
+                    }
+                    //for player 2
+                    if(this.board[row][column] == 2) {
+                        $('.player2pieces').append("<div class='tile' id='tile"+amountofpieces+"' style='top:;left:;'></div>");
+                        tiles[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
+                        amountofpieces += 1;
+                    }
+                }
+            }
+        },
+
     }
 
 
