@@ -5,8 +5,8 @@ body {
     position: absolute;
     top: calc(15%);
     left: calc(25%);
-    width: 500px;
-    height: 500px;
+    width: 80vmin;
+    height: 80vmin;
     background-color: #16A8C7;
 }
 .player1pieces .piece{
