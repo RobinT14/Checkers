@@ -204,13 +204,13 @@ window.onload = function(){
                     //how to place the pieces on the board: for player 1
                     }
                     if(this.board[row][column] == 1) {
-                        $('.player1pieces').append("<div class='tile' id='tile"+amountofpieces+"' style='top:;left:;'></div>");
+                        $('.player1pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top:;left:;'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                     }
                     //for player 2
                     if(this.board[row][column] == 2) {
-                        $('.player2pieces').append("<div class='tile' id='tile"+amountofpieces+"' style='top:;left:;'></div>");
+                        $('.player2pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top:;left:;'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                     }
