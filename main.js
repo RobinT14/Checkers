@@ -10,5 +10,5 @@ windows.onload = function(){
         [2, 0, 2, 0, 2, 0, 2, 0]
     ];
 
-    $(board).append(gameBoard);
+    $("board").append(gameBoard);
 }
