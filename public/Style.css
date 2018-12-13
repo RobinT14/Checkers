@@ -46,8 +46,9 @@ body {
 }
 
 .tiles{
-    width: 12.5%;
-    height: 12.5%;
+    width: 5vw;
+    height: 5vw;
     background-color: black;
+    position: absolute;
 }
     
