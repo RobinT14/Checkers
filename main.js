@@ -264,7 +264,7 @@ window.onload = function(){
 
     //reset button
     $("#restart").on("click", function() {
-        Game.reset;
+        location.reload();
     });
 
     //move piece to clicked tile
