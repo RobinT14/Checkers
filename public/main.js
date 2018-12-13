@@ -193,13 +193,13 @@ window.onload = function(){
                 if(row%2 == 1) {
                     //where the column is even
                     if(column%2 == 0) {
-                      this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: 10%;left: 10%;'></div>");
+                      this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                       tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
                       amountoftiles += 1;
                     }
                     //where the column is odd
                     if(column%2 == 1) {
-                        this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: 10%;left: 10%;'></div>");
+                        this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                         tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
                         amountoftiles += 1;
                     //how to place the pieces on the board: for player 1
@@ -211,7 +211,7 @@ window.onload = function(){
                     }
                     //for player 2
                     if(this.board[row][column] == 2) {
-                        $('.player2pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top: 10%; left: 10%;'></div>");
+                        $('.player2pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                     }
