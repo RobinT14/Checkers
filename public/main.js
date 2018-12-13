@@ -208,14 +208,14 @@ window.onload = function(){
                     }
                 }
                 if(this.board[row][column] == 1) {
-                        $('.player1pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
-                        pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
+                        $('.player1pieces').append("<div class='piece' id='"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
+                        pieces[amountofpieces] = new Piece($("#"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                 }
                     //for player 2
                 if(this.board[row][column] == 2) {
-                        $('.player2pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
-                        pieces[amountofpieces] = new Piece($('"+amountofpieces+"'), [parseInt(row), parseInt(column)]);
+                        $('.player2pieces').append("<div class='piece' id='"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
+                        pieces[amountofpieces] = new Piece($("#"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                 }
             }
