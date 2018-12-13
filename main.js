@@ -142,7 +142,7 @@ window.onload = function(){
                     }
                 }
             }
-        }
+        };
     }
 
 
