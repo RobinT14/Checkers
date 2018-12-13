@@ -54,6 +54,8 @@ window.onload = function(){
         board: gameBoard,
         turn: player1,
         tilesObject: $(".tiles")
+        //fill the board
+        
     }
 
 
