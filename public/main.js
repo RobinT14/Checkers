@@ -269,6 +269,18 @@ window.onload = function(){
         Game.reset();
     });
 
+    var Leave = {
+        play: function (){
+            window.location.href = "Splash.html";
+        }
+    }
+
+    //leave button 
+    $("#leave").on("click", function() {
+    Leave.leave();
+});
+
+
     //move piece to clicked tile
     $(".tile").on("click", function(){
         //You can only click on tiles when there is a selected piece
