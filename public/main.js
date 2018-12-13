@@ -219,7 +219,7 @@ window.onload = function(){
                         amountofpieces += 1;
                 }
             }
-        }.
+        },
         Hasanelement: function (row, column) {
             if(this.board[row][column] == 0) {
               return true;
