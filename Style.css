@@ -3,7 +3,7 @@ body {
 }
 #board {
     position: absolute;
-    top: calc(50% - 40vmin);
+    top: calc(25%);
     left: calc(50% - 40vmin);
     width: 80vmin;
     height: 80vmin;
