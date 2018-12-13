@@ -2,7 +2,7 @@ window.onload = function(){
     
     
 
-var Splash ={
+var Splash = {
     play: function (){
         location.reload();
     }
