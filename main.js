@@ -1,3 +1,5 @@
+import { url } from "inspector";
+
 window.onload = function(){
 
     //the board at the start
@@ -33,7 +35,7 @@ window.onload = function(){
         this.bigPiece = false;
         this.becomeBigPiece = function(){
             this.bigPiece = true;
-            //update design
+            this.element.css("backgroundImage", "url('king"+this.player+".png')")
         }
 
         //move the piece
