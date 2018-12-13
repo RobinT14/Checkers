@@ -200,5 +200,38 @@ window.onload = function(){
         Game.reset;
     });
 
+    //move piece to clicked tile
+    $(".tile").on("click", function(){
+        //You can only click on tiles when there is a selected piece
+        if($('.selected').length != 0){
+            //take the tile id
+            var tileID = $(this).attr("id").replace(/tile/, '');
+            var tile = tiles[tileID];
+            //take the title piece
+            var piece = pieces[$('.selected').attr("id")];
+            var inRange = tile.inRange(piece);
+            if(inRange){
+                if(inRange == 'jump'){
+                    if(piece.opponentJump(tile)){
+                        piece.move(tile);
+                        if(piece.canJumpAny()){
+                            //now the same person can make another turn, which he has right to
+                            Game.changeTurn();
+                            piece.element.addClass('selected');
+                        }
+                    }
+                }
+                else if(inRange == 'regular'){
+                    if(!piece.canJumpAny()){
+                        piece.move(tile);
+                    }
+                    else{
+                        alert("If you can slay an opponents' piece you have to!")
+                    }
+                }
+            }
+        }
+    });
+
 
 }
