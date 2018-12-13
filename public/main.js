@@ -180,7 +180,7 @@ window.onload = function(){
     //initialize game
     var Game = {
         board: gameBoard,
-        turn: 1,
+        playerTurn: 1,
         tilesElement: $(".tiles"),
         dictionary: ["0vw", "5vw", "10vw", "15vw", "20vw", "25vw", "30vw", "35vw", "40vw"],
         //fill the board
