@@ -4,9 +4,9 @@ window.onload = function(){
 $("#play").on("click", function() {
     Game.play();
 });
-play: function(){
+play: function (){
     location.reload();
-},
+}
 
 //play battle royal button
 $("#Battle").on("click", function() {
