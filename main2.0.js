@@ -7,7 +7,7 @@ function Tile (object, place){
         //look if move is just 1 tile; Pythagoras 1;1;sqrt(2)
         if(dispatchEvent(this.position[0], this.position[1], piece.position[0] piece.position[1] == Math.sqrt(2))){
             return "regular"; // regular move
-        };
+        }
         //look if move is over an enemy; Pythagoras 2;2;sqrt(8)
         else if(dispatchEvent(this.position[0], this.position[1], piece.position[0], piece.position[1]) ==  Math.sqrt(8)){
             return "Jump";
@@ -15,3 +15,16 @@ function Tile (object, place){
     };
 };
 
+//move the piece
+this.move = function(tile){
+    //make the tile move
+    this.object.removeClass("selected");
+    if(!Board.isValidPlacetoMove(tile.place[0], tile.place[1])){
+        return false;
+    }
+
+    //make sure the tile doesn't make a move backwards
+    if(this.player == 1 && this.king == flase){
+        if(tile.place[0] < )
+    }
+}
