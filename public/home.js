@@ -1,6 +1,5 @@
 window.onload = function(){
     
-    
 
 var Splash = {
     play: function (){
