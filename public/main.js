@@ -245,7 +245,6 @@ window.onload = function(){
     Game.setup();
 
     
-
     
 
     //user input
