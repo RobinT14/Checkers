@@ -1,5 +1,3 @@
-import { url } from "inspector";
-
 window.onload = function(){
 
     //the board at the start
