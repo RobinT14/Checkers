@@ -3,8 +3,8 @@ body {
 }
 #board {
     position: absolute;
-    top: calc(15%);
-    left: calc(25%);
+    top: 15%;
+    left: 20vmin;
     width: 80vmin;
     height: 80vmin;
     background-color: #16A8C7;
