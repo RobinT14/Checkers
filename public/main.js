@@ -33,7 +33,7 @@ window.onload = function(){
         this.bigPiece = false;
         this.becomeBigPiece = function(){
             this.bigPiece = true;
-            this.element.css("backgroundImage", "url('king"+this.player+".png')")
+            this.element.css("background-color", "green");
         }
 
         //move the piece
@@ -62,12 +62,12 @@ window.onload = function(){
             this.place = [tile.place[0], tile.place[1]];
 
             //change the css
-            this.element.css("top", Game[this.place[0]]);
-            this.element.css("left", Game[this.place[1]]);
+            this.element.css("top", Game.dictionary[this.place[0]]);
+            this.element.css("left", Game.dictionary[this.place[1]]);
 
             //if the piece reaches the end on the opposide side; the piece will be a bigPiece
             if(!this.bigPiece && (this.place[0] ==0 || this.place[0] == 7)){
-            this.makeKing();
+            this.becomeBigPiece();
             }
             Game.changeTurn();
             return true;
@@ -85,7 +85,7 @@ window.onload = function(){
             };
 
             //tests if enemeny could made a specific jump
-            this.CanEnemyJump = function(newPlace){
+            this.canEnemyJump = function(newPlace){
                 //find the x-movement and y-movement
                 var dx = newPlace[1] - this.place[1];
                 var dy = newPlace[0] - this.place[0];
@@ -110,7 +110,7 @@ window.onload = function(){
                 var tileToChecky = this.place[0] + dy/2;
     
                 //check is there is a piece and there is no piece after that piece
-                if(!Game.isValidPlacetoMove(tileToChecky, tileToChecky) && Gamepad.isValidPlacetoMove(newPlace[0], newPlace[1])){
+                if(!Game.Hasanelement(tileToChecky, tileToChecky) && Game.Hasanelement(newPlace[0], newPlace[1])){
                     //find which piece
                     for(pieceIndex in pieces){
                         if(pieces[pieceIndex].place[0] == tileToChecky && pieces[pieceIndex].place[1] == tileToCheckx) {
@@ -155,8 +155,8 @@ window.onload = function(){
     }
 
     //calculate distance between places
-    var distance = function (x1, x2, y1, y2){
-        var calculate1 = Math.pow(x1-x2) + Math.pow(y1-y2);
+    var distance = function (x1, y1, x2, y2){
+        var calculate1 = Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2);
         return Math.sqrt(calculate1);
     }
 
@@ -167,11 +167,11 @@ window.onload = function(){
     //look if tile is in range for  a possible move
         this.inRange = function(piece){
         //look if move is just 1 tile; Pythagoras 1;1;sqrt(2)
-        if(dispatchEvent(this.place[0], this.place[1], piece.place[0], piece.place[1] == Math.sqrt(2))){
+        if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) == Math.sqrt(2)){
             return "regular"; // regular move
         }
         //look if move is over an enemy; Pythagoras 2;2;sqrt(8)
-        else if(dispatchEvent(this.place[0], this.place[1], piece.place[0], piece.place[1]) ==  Math.sqrt(8)){
+        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) ==  Math.sqrt(8)){
         return "Jump";
             }
         }
@@ -180,7 +180,7 @@ window.onload = function(){
     //initialize game
     var Game = {
         board: gameBoard,
-        turn: 1,
+        playerTurn: 1,
         tilesElement: $(".tiles"),
         dictionary: ["0vw", "5vw", "10vw", "15vw", "20vw", "25vw", "30vw", "35vw", "40vw"],
         //fill the board
@@ -208,14 +208,14 @@ window.onload = function(){
                     }
                 }
                 if(this.board[row][column] == 1) {
-                        $('.player1pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
-                        pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
+                        $('.player1pieces').append("<div class='piece' id='"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
+                        pieces[amountofpieces] = new Piece($("#"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                 }
                     //for player 2
                 if(this.board[row][column] == 2) {
-                        $('.player2pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
-                        pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
+                        $('.player2pieces').append("<div class='piece' id='"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
+                        pieces[amountofpieces] = new Piece($("#"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                 }
             }
@@ -230,17 +230,16 @@ window.onload = function(){
         changeTurn: function () {
             if(this.playerTurn == 1) {
               this.playerTurn = 2;
-              $('.turn').css("background", "linear-gradient(to right, transparent 50%, #BEEE62 50%)");
               return;
             }
-            if(this.playerTurn == 1) {
-              this.playerTurn = 2;
-              $('.turn').css("background", "linear-gradient(to right, #BEEE62 50%, transparent 50%)");
+            if(this.playerTurn == 2) {
+              this.playerTurn = 1;
             }
         },
         reset: function(){
             location.reload();
         },
+        tilesElement: $('.tiles'),
     }
 
     Game.setup();

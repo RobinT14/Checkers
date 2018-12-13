@@ -11,8 +11,8 @@ body {
 }
 .player1pieces .piece{
     position: absolute;
-    width: 10%;
-    height: 10%;
+    width: 4vw;
+    height: 4vw;
     background-color: #2600ff;
     background-size: 65%;
     background-repeat: no-repeat;
@@ -21,16 +21,15 @@ body {
     display: inline-block;
     box-sizing: border-box;
     transition: all 0.2s linear;
-    margin-top: 1vmin;
-    margin-left: 1vmin;
-    cursor: pointer;
+    margin-top: 0.5vw;
+    margin-left: 0.5vw;
     border: 1vmin solid #ff0000; 
 }
 
 .player2pieces .piece{
     position: absolute;
-    width: 10%;
-    height: 10%;
+    width: 4vw;
+    height: 4vw;
     background-color: #ff0000;
     background-size: 65%;
     background-repeat: no-repeat;
@@ -39,16 +38,25 @@ body {
     display: inline-block;
     box-sizing: border-box;
     transition: all 0.2s linear;
-    margin-top: 1vmin;
-    margin-left: 1vmin;
-    cursor: pointer;
+    margin-top: 0.5vw;
+    margin-left: 0.5vw;
     border: 1vmin solid #2600ff; 
 }
 
-.tiles{
+.tile{
     width: 5vw;
     height: 5vw;
     background-color: black;
     position: absolute;
 }
-    
+
+.piece.selected {
+    width: 5vw;
+    height: 5vw;
+    margin-top: 0vw;
+    margin-left: 0vw;
+}
+
+.piece{
+    cursor: pointer;
+}
