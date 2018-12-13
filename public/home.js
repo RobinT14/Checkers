@@ -2,7 +2,7 @@ window.onload = function(){
     
     //play button 1v1
 $("#play").on("click", function() {
-    res.sendFile("game.html", {root: "./public"});
+    Game.reset();
 });
 
 //play battle royal button
