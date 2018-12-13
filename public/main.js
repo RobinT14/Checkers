@@ -174,7 +174,11 @@ window.onload = function(){
         else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) ==  Math.sqrt(8)){
         return "Jump";
             }
+        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2) == 0 && piece.this.bigPiece){
+            alert("hi");
         }
+        }
+        
     }
 
     //initialize game
