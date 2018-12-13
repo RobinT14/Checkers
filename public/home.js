@@ -1,10 +1,10 @@
-window.onload = function(){
+
 
 
 
 //play button 1v1
 $("#play").on("click", function() {
-    Game.reset();
+    alert(Help!);
 });
 
  //play online button
@@ -18,5 +18,3 @@ $("#play").on("click", function() {
 });
 
 */
-
-}
