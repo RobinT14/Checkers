@@ -33,7 +33,7 @@ window.onload = function(){
         this.bigPiece = false;
         this.becomeBigPiece = function(){
             this.bigPiece = true;
-            this.element.css("backgroundImage", "url('king"+this.player+".png')")
+            this.element.css("background-color", "green");
         }
 
         //move the piece
@@ -67,7 +67,7 @@ window.onload = function(){
 
             //if the piece reaches the end on the opposide side; the piece will be a bigPiece
             if(!this.bigPiece && (this.place[0] ==0 || this.place[0] == 7)){
-            this.makeKing();
+            this.becomeBigPiece();
             }
             Game.changeTurn();
             return true;
