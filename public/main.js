@@ -241,6 +241,7 @@ window.onload = function(){
         reset: function(){
             location.reload();
         },
+        tilesElement: $('.tiles'),
     }
 
     Game.setup();
