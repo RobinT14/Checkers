@@ -182,7 +182,7 @@ window.onload = function(){
     //initialize game
     var Game = {
         board: gameBoard,
-        turn: player1,
+        turn: 1,
         tilesElement: $(".tiles"),
         //fill the board
         setup: function() {
