@@ -4,7 +4,7 @@
 
 //play button 1v1
 $("#play").on("click", function() {
-    alert(Help!);
+    alert("Help!");
 });
 
  //play online button
