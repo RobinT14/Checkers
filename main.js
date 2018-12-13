@@ -142,19 +142,17 @@ window.onload = function(){
                 //reset position so it won't be taken by the for loop in de canEnemyJump method
                 this.place = [];
             }
-        }
 
-        //tests if piece can jump anywhere
-        this.canJumpAny = function () {
+            //tests if piece can jump anywhere
+            this.canJumpAny = function () {
             if(this.canEnemyJump([this.place[0]+2, this.place[1]+2]) ||
             this.canEnemyJump([this.place[0]+2, this.place[1]-2]) ||
             this.canEnemyJump([this.place[0]-2, this.place[1]+2]) ||
             this.canEnemyJump([this.place[0]-2, this.place[1]-2])) {
-            return true;
+                return true;
             }   
-        return false;
-        };
-
+            return false;
+            };
     }
 
     //calculate distance between places
@@ -304,6 +302,5 @@ window.onload = function(){
             }
         }
     });
-
 
 }
