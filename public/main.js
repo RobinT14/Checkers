@@ -166,14 +166,13 @@ window.onload = function(){
     this.place = place; //place on the board
     //look if tile is in range for  a possible move
         this.inRange = function(piece){
-
-        if((distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2)) % Math.sqrt(2) < 0.001 || (distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2)) % Math.sqrt(2) > 0.002 && piece.bigPiece){
-            alert((distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2)) % Math.sqrt(2))
-            return "regular"; //regular for a king
-        }
         //look if move is just 1 tile; Pythagoras 1;1;sqrt(2)
-        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) == Math.sqrt(2)){
+        if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) == Math.sqrt(2)){
             return "regular"; // regular move
+        }
+        //if it is a king it may travel further
+        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2) > 0 && piece.bigPiece){
+            return "regular";
         }
         //look if move is over an enemy; Pythagoras 2;2;sqrt(8)
         else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) ==  Math.sqrt(8)){
