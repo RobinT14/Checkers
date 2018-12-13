@@ -101,28 +101,26 @@ window.onload = function(){
                     return false;
                     }
                 }
-            }
-
-            //must be on the board
-            if(newPlace[0] > 7 || newPlace[1] > 7 || newPlace[0] < 0 || newPlace[1] < 0){
-            return false;
-            }
-            //piece that's gonna be jumped over
-            var tileToCheckx = this.place[1] + dx/2;
-            var tileToChecky = this.place[0] + dy/2;
-
-            //check is there is a piece and there is no piece after that piece
-            if(!Gamepad.isValidPlacetoMove(tileToChecky, tileToChecky) && Gamepad.isValidPlacetoMove(newPlace[0], newPlace[1])){
-                //find which piece
-                for(pieceIndex in pieces){
-                    if(pieces[pieceIndex].place[0] == tileToChecky && pieces[pieceIndex].place[1] == tileToCheckx) {
-                        if(this.player != pieces[pieceIndex].player){
-                    return pieces[pieceIndex];
+                //must be on the board
+                if(newPlace[0] > 7 || newPlace[1] > 7 || newPlace[0] < 0 || newPlace[1] < 0){
+                    return false;
+                }
+                //piece that's gonna be jumped over
+                var tileToCheckx = this.place[1] + dx/2;
+                var tileToChecky = this.place[0] + dy/2;
+    
+                //check is there is a piece and there is no piece after that piece
+                if(!Game.isValidPlacetoMove(tileToChecky, tileToChecky) && Gamepad.isValidPlacetoMove(newPlace[0], newPlace[1])){
+                    //find which piece
+                    for(pieceIndex in pieces){
+                        if(pieces[pieceIndex].place[0] == tileToChecky && pieces[pieceIndex].place[1] == tileToCheckx) {
+                            if(this.player != pieces[pieceIndex].player){
+                        return pieces[pieceIndex];
+                            }
                         }
                     }
                 }
-            }
-
+            };
 
             this.enemyJump = function(tile){
                 var pieceToRemove = this.canEnemyJump(tile.place);
