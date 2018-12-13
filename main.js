@@ -241,8 +241,7 @@ window.onload = function(){
 
     Game.setup();
 
-    //put in the board
-    $("#board").append(gameBoard);
+    
 
     
 
