@@ -6,7 +6,7 @@ body {
     top: calc(15%);
     left: calc(25%);
     width: 50%;
-    height: 80vmin;
+    height: 50%;
     background-color: #16A8C7;
 }
 .player1pieces .piece{
