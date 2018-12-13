@@ -230,12 +230,10 @@ window.onload = function(){
         changeTurn: function () {
             if(this.playerTurn == 1) {
               this.playerTurn = 2;
-              $('.turn').css("background", "linear-gradient(to right, transparent 50%, #BEEE62 50%)");
               return;
             }
-            if(this.playerTurn == 1) {
-              this.playerTurn = 2;
-              $('.turn').css("background", "linear-gradient(to right, #BEEE62 50%, transparent 50%)");
+            if(this.playerTurn == 2) {
+              this.playerTurn = 1;
             }
         },
         reset: function(){
