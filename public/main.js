@@ -197,6 +197,8 @@ window.onload = function(){
                       tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
                       amountoftiles += 1;
                     }
+                }
+                else{
                     //where the column is odd
                     if(column%2 == 1) {
                         this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
@@ -204,20 +206,20 @@ window.onload = function(){
                         amountoftiles += 1;
                     //how to place the pieces on the board: for player 1
                     }
-                    if(this.board[row][column] == 1) {
+                }
+                if(this.board[row][column] == 1) {
                         $('.player1pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
-                    }
+                }
                     //for player 2
-                    if(this.board[row][column] == 2) {
+                if(this.board[row][column] == 2) {
                         $('.player2pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
-                    }
                 }
             }
-        },
+        }.
         Hasanelement: function (row, column) {
             if(this.board[row][column] == 0) {
               return true;
