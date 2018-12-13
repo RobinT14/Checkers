@@ -7,7 +7,5 @@ body {
     left: calc(25%);
     width: 50%;
     height: 80vmin;
-    border-radius: 5px;
     background-color: #B93848;
-    overflow: hidden; 
 }
