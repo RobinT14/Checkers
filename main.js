@@ -207,13 +207,13 @@ window.onload = function(){
                     }
                     if(this.board[row][column] == 1) {
                         $('.player1pieces').append("<div class='tile' id='tile"+amountofpieces+"' style='top:;left:;'></div>");
-                        tiles[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
+                        pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                     }
                     //for player 2
                     if(this.board[row][column] == 2) {
                         $('.player2pieces').append("<div class='tile' id='tile"+amountofpieces+"' style='top:;left:;'></div>");
-                        tiles[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
+                        pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                     }
                 }
