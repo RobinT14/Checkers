@@ -3,11 +3,11 @@
 var express = require("express");
 var http = require("http");
 var path = require("path");
-var websocket = require("ws");
+//var websocket = require("ws");
 
-var server = http.create.Server(app);
+//var server = http.create.Server(app);
 
-const wss = new websocket.Server({server});
+//const wss = new websocket.Server({server});
 
 var port = process.argv[2];
 var app = express();
