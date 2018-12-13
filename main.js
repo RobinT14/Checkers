@@ -42,12 +42,12 @@ window.onload = function(){
         }
 
         //move the piece
-        this.move = function(tile){
-            //make the tile move
-            this.object.removeClass("selected");
+    this.move = function(tile){
+        //make the tile move
+        this.object.removeClass("selected");
     if(!Board.isValidPlacetoMove(tile.place[0], tile.place[1])){
         return false;
-    }
+        }   
 
     //make sure the tile doesn't make a move backwards
     if(this.player == 1 && this.king == false){
@@ -59,7 +59,7 @@ window.onload = function(){
             if(tile.place[0] > this.place[0]){
                 return false;
             }
-         }
+        }
     
     //remove the mark from Game.board
     Game.board[this.place[0]][this.place[1]] = 0;
