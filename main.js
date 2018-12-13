@@ -39,7 +39,7 @@ window.onload = function(){
         this.move = function(tile){
           //make the tile move
             this.element.removeClass("selected");
-            if(!Board.Hasanelement(tile.place[0], tile.place[1])){
+            if(!Game.Hasanelement(tile.place[0], tile.place[1])){
             return false;
             }   
 
