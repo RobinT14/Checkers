@@ -14,3 +14,4 @@ function Tile (object, place){
         };
     };
 };
+
