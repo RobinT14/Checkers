@@ -4,7 +4,8 @@ window.onload = function(){
 
 var Splash = {
     play: function (){
-        location.reload();
+        window.location.href = "game.html";
+        //game.html();
     }
 }
 
