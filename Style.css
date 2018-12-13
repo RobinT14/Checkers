@@ -4,9 +4,9 @@ body {
 #board {
     position: absolute;
     top: 15%;
-    left: 20vw;
-    width: 60vw;
-    height: 60vw;
+    left: 30vw;
+    width: 40vw;
+    height: 40vw;
     background-color: #16A8C7;
 }
 .player1pieces .piece{
