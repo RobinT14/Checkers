@@ -6,15 +6,7 @@ window.onload = function() {
    
     
     
-    //tests if piece can jump anywhere
-    this.canJumpAny = function () {
-      if(this.canOpponentJump([this.position[0]+2, this.position[1]+2]) ||
-         this.canOpponentJump([this.position[0]+2, this.position[1]-2]) ||
-         this.canOpponentJump([this.position[0]-2, this.position[1]+2]) ||
-         this.canOpponentJump([this.position[0]-2, this.position[1]-2])) {
-        return true;
-      } return false;
-    };
+    
     
     //tests if an opponent jump can be made to a specific place
     this.canOpponentJump = function(newPosition) {
