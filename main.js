@@ -20,6 +20,7 @@ window.onload = function(){
     function Piece (element, place){
         this.element = element;
         this.place = place;
+        this.player = '';
                 
         if(this.element.attr("id") < 12){
             this.player = 1;
@@ -245,9 +246,7 @@ window.onload = function(){
     //put in the board
     $("#board").append(gameBoard);
 
-    //script to be removed later
-    var player1;
-    var player2;
+    
 
     //user input
     $(".piece").on("click", function(){
