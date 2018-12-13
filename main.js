@@ -178,4 +178,27 @@ window.onload = function(){
     //script to be removed later
     var player1;
     var player2;
+
+    //user input
+    $(".piece").on("click", function(){
+        var selected;
+        var currentTurn = ($(this).parent().attr("class").split(' ')[0] == "player"+Game.playerTurn+"pieces");
+        if(currentTurn){
+            if($(this).hasClass('selected')){
+                selected = true
+            }
+            $(".piece").each(function(index) {
+                $(".piece").eq(index).removeClass('selected')});
+            if(!selected){
+                $(this).addClass('selected');
+            }
+        }
+    });
+
+    //reset button
+    $('#restart').on(click, function() {
+        Game.reset;
+    });
+
+
 }
