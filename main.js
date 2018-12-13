@@ -263,7 +263,7 @@ window.onload = function(){
     });
 
     //reset button
-    $('#restart').on("click", function() {
+    $("#restart").on("click", function() {
         Game.reset;
     });
 
