@@ -188,7 +188,7 @@ window.onload = function(){
             var amountofpieces = 0;
             var amountoftiles = 0;
             for(row in this.board){
-                for(column in this.board[row])
+                for(column in this.board[row]){
                 //algorithm on how the tiles should be placed on the board: for every odd row
                 if(row%2 == 1) {
                     //where the column is even
@@ -219,6 +219,7 @@ window.onload = function(){
                         amountofpieces += 1;
                 }
             }
+        }
         },
         Hasanelement: function (row, column) {
             if(this.board[row][column] == 0) {
