@@ -209,7 +209,7 @@ window.onload = function(){
                 }
                 if(this.board[row][column] == 1) {
                         $('.player1pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
-                        pieces[amountofpieces] = new Piece($('"+amountofpieces+"'), [parseInt(row), parseInt(column)]);
+                        pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
                 }
                     //for player 2
