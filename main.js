@@ -49,6 +49,13 @@ window.onload = function(){
         return Math.sqrt(calculate1);
     }
 
+    //initialize game
+    var Game = {
+        board: gameBoard,
+        turn: player1,
+        tilesObject: $(".tiles")
+    }
+
 
     //put in the board
     $("#board").append(gameBoard);
