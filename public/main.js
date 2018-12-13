@@ -275,6 +275,7 @@ window.onload = function(){
     $(".tile").on("click", function(){
         //You can only click on tiles when there is a selected piece
         if($('.selected').length != 0){
+            alert("nice!")
             //take the tile id
             var tileID = $(this).attr("id").replace(/tile/, '');
             var tile = tiles[tileID];
