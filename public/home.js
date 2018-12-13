@@ -8,7 +8,6 @@ var Splash = {
     }
 }
 
-
 //play button 1v1
 $("#play").on("click", function() {
     Splash.play();
