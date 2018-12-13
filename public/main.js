@@ -62,8 +62,8 @@ window.onload = function(){
             this.place = [tile.place[0], tile.place[1]];
 
             //change the css
-            this.element.css("top", Game[this.place[0]]);
-            this.element.css("left", Game[this.place[1]]);
+            this.element.css("top", Game.dictionary[this.place[0]]);
+            this.element.css("left", Game.dictionary[this.place[1]]);
 
             //if the piece reaches the end on the opposide side; the piece will be a bigPiece
             if(!this.bigPiece && (this.place[0] ==0 || this.place[0] == 7)){
