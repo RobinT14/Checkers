@@ -19,12 +19,12 @@ window.onload = function(){
     
 
     //function to set pieces to the board
-    function Piece (object, place){
-        this.object = object;
+    function Piece (element, place){
+        this.element = element;
         this.place = place;
         
         
-        if(this.object.attr("id") < 12){
+        if(this.element.attr("id") < 12){
             this.player = "player1";
         }
         else{
@@ -44,8 +44,8 @@ window.onload = function(){
         //move the piece
         this.move = function(tile){
           //make the tile move
-            this.object.removeClass("selected");
-            if(!Board.Hasanobject(tile.place[0], tile.place[1])){
+            this.element.removeClass("selected");
+            if(!Board.Hasanelement(tile.place[0], tile.place[1])){
             return false;
             }   
 
@@ -67,15 +67,26 @@ window.onload = function(){
             this.place = [tile.place[0], tile.place[1]];
 
             //change the css
-            this.object.css("top", Game[this.place[0]]);
-            this.object.css("left", Game[this.place[1]]);
+            this.element.css("top", Game[this.place[0]]);
+            this.element.css("left", Game[this.place[1]]);
 
             //if the piece reaches the end on the opposide side; the piece will be a king
-            if(!this.king && (this.place[0] ==0 || this.position[0] == 7)){
+            if(!this.king && (this.place[0] ==0 || this.place[0] == 7)){
             this.makeKing();
             }
             Game.changeTurn();
             return true;
+        };
+
+        //tests if piece can jump anywhere
+        this.canJumpAny = function () {
+            if(this.canOpponentJump([this.place[0]+2, this.place[1]+2]) ||
+            this.canOpponentJump([this.place[0]+2, this.place[1]-2]) ||
+            this.canOpponentJump([this.place[0]-2, this.place[1]+2]) ||
+            this.canOpponentJump([this.place[0]-2, this.place[1]-2])) {
+            return true;
+            }   
+        return false;
         };
 
     }
@@ -87,8 +98,8 @@ window.onload = function(){
     }
 
     //check if a move is possible
-    function Tile (object, place){
-    this.object = object; // linked DOm object
+    function Tile (element, place){
+    this.element = element; // linked DOm element
     this.place = place; //place on the board
     //look if tile is in range for  a possible move
         this.inRange = function(piece){
@@ -107,7 +118,7 @@ window.onload = function(){
     var Game = {
         board: gameBoard,
         turn: player1,
-        tilesObject: $(".tiles"),
+        tilesElement: $(".tiles"),
         //fill the board
         setup: function() {
             var amountofpieces = 0;
@@ -118,13 +129,13 @@ window.onload = function(){
                 if(row%2 == 1) {
                     //where the column is even
                     if(column%2 == 0) {
-                      this.tilesObject.append("<div class='tile' id='tile"+amountoftiles+"' style='top:;left:;'></div>");
+                      this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top:;left:;'></div>");
                       tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
                       amountoftiles += 1;
                     }
                     //where the column is odd
                     if(column%2 == 1) {
-                        this.tilesObject.append("<div class='tile' id='tile"+amountoftiles+"' style='top:;left:;'></div>");
+                        this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top:;left:;'></div>");
                         tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
                         amountoftiles += 1;
                     //how to place the pieces on the board: for player 1
@@ -143,7 +154,7 @@ window.onload = function(){
                 }
             }
         },
-        Hasanobject: function (row, column) {
+        Hasanelement: function (row, column) {
             if(this.board[row][column] == 0) {
               return true;
             } 
