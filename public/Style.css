@@ -56,4 +56,7 @@ body {
     margin-top: 0vw;
     margin-left: 0vw;
 }
-    
+
+.piece{
+    cursor: pointer;
+}
