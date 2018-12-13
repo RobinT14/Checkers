@@ -16,14 +16,11 @@ window.onload = function(){
     var pieces = [];
     var tiles = [];
 
-    
-
     //function to control piece
     function Piece (element, place){
         this.element = element;
         this.place = place;
-        
-        
+                
         if(this.element.attr("id") < 12){
             this.player = "player1";
         }
@@ -31,9 +28,6 @@ window.onload = function(){
             this.player = "player2";
         }
 
-        
-        
-        
         //check whether it is a big piece or not
         this.bigPiece = false;
         this.becomeBigPiece = function(){
@@ -50,12 +44,12 @@ window.onload = function(){
             }   
 
              //make sure the tile doesn't make a move backwards
-            if(this.player == "player1" && this.king == false){
+            if(this.player == "player1" && this.bigPiece == false){
                 if(tile.place[0] < this.place[0]){
                 return false;
                 }
             }
-            else if(this.player == "player2" && this.king == false){
+            else if(this.player == "player2" && this.bigPiece == false){
                 if(tile.place[0] > this.place[0]){
                 return false;
             }
@@ -70,8 +64,8 @@ window.onload = function(){
             this.element.css("top", Game[this.place[0]]);
             this.element.css("left", Game[this.place[1]]);
 
-            //if the piece reaches the end on the opposide side; the piece will be a king
-            if(!this.king && (this.place[0] ==0 || this.place[0] == 7)){
+            //if the piece reaches the end on the opposide side; the piece will be a bigPiece
+            if(!this.bigPiece && (this.place[0] ==0 || this.place[0] == 7)){
             this.makeKing();
             }
             Game.changeTurn();
