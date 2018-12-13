@@ -53,7 +53,7 @@ window.onload = function(){
                 if(tile.place[0] > this.place[0]){
                 return false;
             }
-            }
+        }
     
             //remove the mark from Game.board
             Game.board[this.place[0]][this.place[1]] = 0;
@@ -70,7 +70,7 @@ window.onload = function(){
             }
             Game.changeTurn();
             return true;
-        
+        };
             //tests if a piece can jump
             this.canJump = function () {
                 if(this.canEnemyJump([this.place[0] + 2, this.place[1] + 2]) ||
@@ -91,7 +91,7 @@ window.onload = function(){
 
                 //Make sure the tile doesn't make a move backwards
                 if(this.player == "1" && this.bigpiece == false){
-                    if(new.Place[0] < this.place[0]){
+                    if(new.place[0] < this.place[0]){
                     return false;
                     }
                 }
