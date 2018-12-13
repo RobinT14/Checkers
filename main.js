@@ -45,17 +45,17 @@ window.onload = function(){
          this.move = function(tile){
         //make the tile move
         this.object.removeClass("selected");
-            if(!Board.isValidPlacetoMove(tile.place[0], tile.place[1])){
+            if(!Board.Hasanobject(tile.place[0], tile.place[1])){
         return false;
         }   
 
          //make sure the tile doesn't make a move backwards
-        if(this.player == 1 && this.king == false){
+        if(this.player == "player1" && this.king == false){
             if(tile.place[0] < this.place[0]){
             return false;
             }
         }
-        else if(this.player == 2 && this.king == false){
+        else if(this.player == "player2" && this.king == false){
             if(tile.place[0] > this.place[0]){
                 return false;
             }
@@ -74,7 +74,7 @@ window.onload = function(){
     if(!this.king && (this.place[0] ==0 || this.position[0] == 7)){
         this.makeKing();
         }
-        Game.changePlayerTurn();
+        Game.changeTurn();
         return true;
         };
 
@@ -142,9 +142,30 @@ window.onload = function(){
                     }
                 }
             }
+        },
+        Hasanobject: function (row, column) {
+            if(this.board[row][column] == 0) {
+              return true;
+            } 
+            return false;
+        },
+        changeTurn: function () {
+            if(this.playerTurn == "player1") {
+              this.playerTurn = "player2";
+              $('.turn').css("background", "linear-gradient(to right, transparent 50%, #BEEE62 50%)");
+              return;
+            }
+            if(this.playerTurn == "player1") {
+              this.playerTurn = "player2";
+              $('.turn').css("background", "linear-gradient(to right, #BEEE62 50%, transparent 50%)");
+            }
+        },
+        reset: function(){
+            location.reload();
         }
     }
 
+    Game.setup();
 
     //put in the board
     $("#board").append(gameBoard);
