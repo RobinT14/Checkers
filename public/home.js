@@ -13,7 +13,7 @@ $("#play").on("click", function() {
 //});
 
  /*/show statistics button
- $("#statistics").on("click", function() {
+ $("#stats").on("click", function() {
     Game.reset();
 });
 
