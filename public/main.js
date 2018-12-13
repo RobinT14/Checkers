@@ -182,40 +182,44 @@ window.onload = function(){
         board: gameBoard,
         turn: 1,
         tilesElement: $(".tiles"),
+        dictionary: ["0vw", "5vw", "10vw", "15vw", "20vw", "25vw", "30vw", "35vw", "40vw"],
         //fill the board
         setup: function() {
             var amountofpieces = 0;
             var amountoftiles = 0;
             for(row in this.board){
-                for(column in this.board[row])
+                for(column in this.board[row]){
                 //algorithm on how the tiles should be placed on the board: for every odd row
                 if(row%2 == 1) {
                     //where the column is even
                     if(column%2 == 0) {
-                      this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: 10%;left: 10%;'></div>");
+                      this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                       tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
                       amountoftiles += 1;
                     }
+                }
+                else{
                     //where the column is odd
                     if(column%2 == 1) {
-                        this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: 10%;left: 10%;'></div>");
+                        this.tilesElement.append("<div class='tile' id='tile"+amountoftiles+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                         tiles[amountoftiles] = new Tile($("#tile"+amountoftiles), [parseInt(row), parseInt(column)]);
                         amountoftiles += 1;
                     //how to place the pieces on the board: for player 1
                     }
-                    if(this.board[row][column] == 1) {
-                        $('.player1pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top: 10%; left: 10%;'></div>");
+                }
+                if(this.board[row][column] == 1) {
+                        $('.player1pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
-                    }
+                }
                     //for player 2
-                    if(this.board[row][column] == 2) {
-                        $('.player2pieces').append("<div class='piece' id='tile"+amountofpieces+"' style='top: 10%; left: 10%;'></div>");
+                if(this.board[row][column] == 2) {
+                        $('.player2pieces').append("<div class='piece' id='piece"+amountofpieces+"' style='top: "+this.dictionary[row]+"; left: "+this.dictionary[column]+";'></div>");
                         pieces[amountofpieces] = new Piece($("#tile"+amountofpieces), [parseInt(row), parseInt(column)]);
                         amountofpieces += 1;
-                    }
                 }
             }
+        }
         },
         Hasanelement: function (row, column) {
             if(this.board[row][column] == 0) {
