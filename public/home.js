@@ -2,7 +2,7 @@ window.onload = function(){
     
     //play button 1v1
 $("#play").on("click", function() {
-    Game.play();
+    Splash.play();
 });
 
 var Splash ={
