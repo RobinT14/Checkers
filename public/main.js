@@ -252,8 +252,8 @@ window.onload = function(){
 
     //user input
     $(".piece").on("click", function(){
-        alert("test");
         var selected;
+        $(this).addClass('selected');
         var currentTurn = ($(this).parent().attr("class").split(' ')[0] == "player"+Game.playerTurn+"pieces");
         if(currentTurn){
             if($(this).hasClass('selected')){
