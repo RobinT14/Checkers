@@ -59,4 +59,8 @@ window.onload = function(){
 
     //put in the board
     $("#board").append(gameBoard);
+
+    //script to be removed later
+    var player1;
+    var player2;
 }
