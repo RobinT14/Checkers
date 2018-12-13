@@ -1,15 +1,19 @@
 window.onload = function(){
     
-    //play button 1v1
-$("#play").on("click", function() {
-    Splash.play();
-});
+    
 
 var Splash ={
     play: function (){
         location.reload();
     }
 }
+
+Splash.setup();
+
+//play button 1v1
+$("#play").on("click", function() {
+    Splash.play();
+});
 
 //play battle royal button
 $("#Battle").on("click", function() {
