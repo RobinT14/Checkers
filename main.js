@@ -42,40 +42,40 @@ window.onload = function(){
         }
 
         //move the piece
-         this.move = function(tile){
-        //make the tile move
-        this.object.removeClass("selected");
+        this.move = function(tile){
+          //make the tile move
+            this.object.removeClass("selected");
             if(!Board.Hasanobject(tile.place[0], tile.place[1])){
-        return false;
-        }   
-
-         //make sure the tile doesn't make a move backwards
-        if(this.player == "player1" && this.king == false){
-            if(tile.place[0] < this.place[0]){
             return false;
+            }   
+
+             //make sure the tile doesn't make a move backwards
+            if(this.player == "player1" && this.king == false){
+                if(tile.place[0] < this.place[0]){
+                return false;
+                }
             }
-        }
-        else if(this.player == "player2" && this.king == false){
-            if(tile.place[0] > this.place[0]){
+            else if(this.player == "player2" && this.king == false){
+                if(tile.place[0] > this.place[0]){
                 return false;
             }
-        }
+            }
     
-    //remove the mark from Game.board
-    Game.board[this.place[0]][this.place[1]] = 0;
-    Game.board[tile.place[0]][tile.place[1]] = this.player;
-    this.place = [tile.place[0], tile.place[1]];
+            //remove the mark from Game.board
+            Game.board[this.place[0]][this.place[1]] = 0;
+            Game.board[tile.place[0]][tile.place[1]] = this.player;
+            this.place = [tile.place[0], tile.place[1]];
 
-    //change the css
-    this.object.css("top", Game[this.place[0]]);
-    this.object.css("left", Game[this.place[1]]);
+            //change the css
+            this.object.css("top", Game[this.place[0]]);
+            this.object.css("left", Game[this.place[1]]);
 
-    //if the piece reaches the end on the opposide side; the piece will be a king
-    if(!this.king && (this.place[0] ==0 || this.position[0] == 7)){
-        this.makeKing();
-        }
-        Game.changeTurn();
-        return true;
+            //if the piece reaches the end on the opposide side; the piece will be a king
+            if(!this.king && (this.place[0] ==0 || this.position[0] == 7)){
+            this.makeKing();
+            }
+            Game.changeTurn();
+            return true;
         };
 
     }
