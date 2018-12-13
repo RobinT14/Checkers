@@ -11,7 +11,7 @@ body {
 }
 .player1pieces{
     position: absolute;
-    width: 8vmin;
+    width: 10%;
     height: 8vmin;
     background-color: #e4a6ae;
     background-size: 65%;
