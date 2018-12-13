@@ -1,7 +1,7 @@
 body {
     background-color: orange;
 }
-div#board {
+#board {
     position: absolute;
     top: calc(50% - 40vmin);
     left: calc(50% - 40vmin);
