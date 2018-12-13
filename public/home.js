@@ -2,8 +2,11 @@ window.onload = function(){
     
     //play button 1v1
 $("#play").on("click", function() {
-    Game.reset();
+    Game.play();
 });
+play: function(){
+    location.reload();
+},
 
 //play battle royal button
 $("#Battle").on("click", function() {
