@@ -26,10 +26,18 @@ window.onload = function(){
         else{
             this.player = "player2";
         }
+        //check whether it is a big piece or not
         this.bigPiece = false;
         this.becomeBigPiece = function(){
-            
+            this.bigPiece = true;
+            //update design
         }
+    }
+
+    //calculate distance between places
+    var distance = function (x1, x2, y1, y2){
+        var calculate1 = Math.pow(x1-x2) + Math.pow(y1-y2);
+        return Math.sqrt(calculate1);
     }
 
 
