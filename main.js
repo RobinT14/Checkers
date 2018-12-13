@@ -18,7 +18,7 @@ window.onload = function(){
 
     
 
-    //function to set pieces to the board
+    //function to control piece
     function Piece (element, place){
         this.element = element;
         this.place = place;
