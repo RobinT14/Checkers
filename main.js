@@ -42,19 +42,19 @@ window.onload = function(){
         }
 
         //move the piece
-    this.move = function(tile){
+         this.move = function(tile){
         //make the tile move
         this.object.removeClass("selected");
-    if(!Board.isValidPlacetoMove(tile.place[0], tile.place[1])){
+            if(!Board.isValidPlacetoMove(tile.place[0], tile.place[1])){
         return false;
         }   
 
-    //make sure the tile doesn't make a move backwards
-    if(this.player == 1 && this.king == false){
-        if(tile.place[0] < this.place[0]){
+         //make sure the tile doesn't make a move backwards
+        if(this.player == 1 && this.king == false){
+            if(tile.place[0] < this.place[0]){
             return false;
+            }
         }
-    }
         else if(this.player == 2 && this.king == false){
             if(tile.place[0] > this.place[0]){
                 return false;
@@ -73,13 +73,12 @@ window.onload = function(){
     //if the piece reaches the end on the opposide side; the piece will be a king
     if(!this.king && (this.place[0] ==0 || this.position[0] == 7)){
         this.makeKing();
-    }
-    Game.changePlayerTurn();
-    return true;
-    };
+        }
+        Game.changePlayerTurn();
+        return true;
+        };
 
     }
-}
 
     //calculate distance between places
     var distance = function (x1, x2, y1, y2){
