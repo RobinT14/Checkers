@@ -103,7 +103,7 @@ window.onload = function(){
             }
 
             //must be on the board
-            if(newplace[0] > 7 || newplace[1] > 7 || newplace[0] < 0 || newplace[1] < 0){
+            if(newPlace[0] > 7 || newPlace[1] > 7 || newPlace[0] < 0 || newPlace[1] < 0){
             return false;
             }
             //piece that's gonna be jumped over
