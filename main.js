@@ -107,7 +107,7 @@ window.onload = function(){
     var Game = {
         board: gameBoard,
         turn: player1,
-        tilesObject: $(".tiles")
+        tilesObject: $(".tiles"),
         //fill the board
         setup: function() {
             var amountofpieces = 0;
@@ -143,7 +143,7 @@ window.onload = function(){
                 }
             }
         }
-    },
+    }
 
 
     //put in the board
