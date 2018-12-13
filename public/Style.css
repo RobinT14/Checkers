@@ -44,4 +44,10 @@ body {
     cursor: pointer;
     border: 1vmin solid #2600ff; 
 }
+
+.tiles{
+    width: 12.5%;
+    height: 12.5%;
+    background-color: black;
+}
     
