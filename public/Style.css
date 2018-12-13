@@ -21,8 +21,8 @@ body {
     display: inline-block;
     box-sizing: border-box;
     transition: all 0.2s linear;
-    margin-top: 0;
-    margin-left: 0;
+    margin-top: 0.5vw;
+    margin-left: 0.5vw;
     cursor: pointer;
     border: 1vmin solid #ff0000; 
 }
