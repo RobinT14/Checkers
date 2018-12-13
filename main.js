@@ -109,9 +109,8 @@ window.onload = function(){
                     }
                 }
             }
-        },
-
-    }
+        }
+    },
 
 
     //put in the board
