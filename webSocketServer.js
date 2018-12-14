@@ -1,4 +1,4 @@
-//WebSocket server
+/*//WebSocket server
 
 const ws = require("ws");
 const User = require("User")//add location ^^^
