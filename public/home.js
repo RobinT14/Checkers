@@ -3,7 +3,7 @@ window.onload = function(){
 
 var Splash = {
     play: function (){
-        window.location.href = "game";
+        window.location.href = "/play";
         //game.html();
     }
 }

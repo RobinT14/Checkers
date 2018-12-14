@@ -1,6 +1,6 @@
 body {
-    background-color: orange;
-    color: blue;
+    background-color: rgb(58, 48, 66);
+    color: white;
 }
 #board {
     position: absolute;
@@ -8,13 +8,13 @@ body {
     left: 30vw;
     width: 40vw;
     height: 40vw;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(185, 56, 72);
 }
 .player1pieces .piece{
     position: absolute;
     width: 4vw;
     height: 4vw;
-    background-color: #2600ff;
+    background-color: rgb(228, 166, 174);;
     background-size: 65%;
     background-repeat: no-repeat;
     background-position: center;
@@ -24,14 +24,14 @@ body {
     transition: all 0.2s linear;
     margin-top: 0.5vw;
     margin-left: 0.5vw;
-    border: 1vmin solid #ff0000; 
+    border: 1vmin solid rgb(185, 56, 72); 
 }
 
 .player2pieces .piece{
     position: absolute;
     width: 4vw;
     height: 4vw;
-    background-color: #ff0000;
+    background-color: rgb(139, 139, 255);
     background-size: 65%;
     background-repeat: no-repeat;
     background-position: center;
@@ -41,13 +41,13 @@ body {
     transition: all 0.2s linear;
     margin-top: 0.5vw;
     margin-left: 0.5vw;
-    border: 1vmin solid #2600ff; 
+    border: 1vmin solid #3a56d1; 
 }
 
 .tile{
     width: 5vw;
     height: 5vw;
-    background-color: black;
+    background-color: rgb(35, 38, 33);
     position: absolute;
     cursor: pointer;
 }
