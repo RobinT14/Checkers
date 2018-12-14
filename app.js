@@ -11,14 +11,18 @@ var app = express();
 
 var server = http.createServer(app);
 
+
 const WebSocket = require('ws');
+//var connection = new WebSocket('ws://localhost:8080', ['soap', 'xmpp']);
 const wss = new WebSocket.Server({
     port: 8080,
+
 });
 
-wss.on("connection", function(ws){
+/*wss.on("connection", function(ws){
     var user = new User;
 });
+
 
 function User(ws){
     this.ws = ws;
@@ -31,6 +35,7 @@ module.exports.broadcast = function(data){
       return false;
     }
 }
+*/
 
 
 //view engine
