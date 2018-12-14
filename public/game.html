@@ -8,10 +8,18 @@
 </head>
 
 <body bgcolor="#b2b2b2">
-
+<font face="calibri" color="blue">
 <table width="100%" height="100%" border="0px">
 <tr height="40px">
-<td width="33%"><img src="statistics.png" align="left"></td><td width="33%"><center><font face="calibri" color="blue"><h1>Checkers</h1></font></center></td><td width="33%"><img src="sound.png" height="40px" align="right"></td>
+<td width="33%"><div id="#wrapper">
+<table border="1px">
+    <tr>
+        <td>Tiles slain by you</td><td>Tiles slain by your opponent</td>
+    </tr>
+    <tr>
+        <td><div id="tilestaken2"></div></td><td><div id="tilestaken1"></div></td>
+    </tr>
+</table></div></td><td width="33%"><center><h1>Checkers</h1></center></td><td width="33%"><img src="sound.png" height="40px" align="right"></td>
 </tr>
 <tr>
 <td colspan="3">
@@ -33,6 +41,6 @@ You
 <p>
 <img src="leave.png" id="leave" valign="bottom"></td></tr>
 </table>
-
+</font>
 </body>
 </html>

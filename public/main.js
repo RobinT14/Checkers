@@ -132,15 +132,19 @@ window.onload = function(){
                 }
             return false;
             };
+            
+            
 
             this.remove = function() {
             //remove and delete it from the gameboard
             this.element.css("display", "none");
                 if(this.player == 1){
-                    $("#player 2").append("<div class= 'capturedPiece'>< /div");
+
+                    $("#tilestaken1").append("I");
                 }
                 if(this.player == 2){
-                    $("#player 1").append("<div class= 'capturedPiece'>< /div");
+
+                    $("#tilestaken2").append("I");
                 }
                 Game.board[this.place[0]][this.place[1]] = 0;
                 //reset position so it won't be taken by the for loop in de canEnemyJump method
@@ -166,49 +170,15 @@ window.onload = function(){
             return "regular"; // regular move
         }
         //if it is a king it may travel further
-        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2) >= 0 && piece.bigPiece){
+        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) == 2*Math.sqrt(2)){
             //but still diagonal
-            if(Math.abs(piece.place[0]-this.place[0]) == Math.abs(piece.place[1]-this.place[1])){
-                
-                var distancex = piece.place[1] - this.place[1];
-                var distancey = piece.place[0] - this.place[0];
-                
-                if(distancex = 1){
-                    return "regular";
-                }
-                else{
-                    var checkcurrentplacex = piece.place[1] + 1;
-                    var checkcurrentplacey = piece.place[0] + 1;
-                    var amountofsteps = distancex;
-                    var i = 1;
-                    for(i; i < amountofsteps; i++){
-                        if(Game.Hasanelement(checkcurrentplacex, checkcurrentplacey)){
-                            checkcurrentplacex++;
-                            checkcurrentplacey++;
-                        }
-                        else if(!Game.Hasanelement(checkcurrentplacex, checkcurrentplacey)){
-                            if(i == distancex - 1){
-                                return "Jump";
-                            }
-                            }
-                        }
-
-                    }
-                }    
-                
-                
-            
+                return "Jump";
             }
         }
         
-        //look if move is over an enemy; Pythagoras 2;2;sqrt(8)
-        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) ==  Math.sqrt(8)){
-        return "Jump";
-        }
-        
-        }
-        
     }
+        
+    
 
     //initialize game
     var Game = {

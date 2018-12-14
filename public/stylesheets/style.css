@@ -1,5 +1,6 @@
 body {
     background-color: orange;
+    color: blue;
 }
 #board {
     position: absolute;
@@ -60,4 +61,8 @@ body {
 
 .piece{
     cursor: pointer;
+}
+
+#wrapper{
+    position: fixed;
 }
