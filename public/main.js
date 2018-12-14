@@ -186,22 +186,17 @@ window.onload = function(){
                             checkcurrentplacex++;
                             checkcurrentplacey++;
                         }
-                        else{
-                            if(amountofsteps == distancex){
-                                return false;
+                        else if(!Game.Hasanelement(checkcurrentplacex, checkcurrentplacey)){
+                            if(i == distancex - 1){
+                                return "Jump";
                             }
-                            if(amountofsteps + 1 == distancex){
-                                if(Game.Hasanelement(this.place[0], this.place[1])){
-                                    return "Jump";
-                                }
                             }
                         }
 
                     }
-                }
-                else{
-                    return "regular";
-                }
+                }    
+                
+                
             
             }
         }
