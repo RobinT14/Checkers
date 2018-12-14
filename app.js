@@ -9,11 +9,22 @@ var path = require("path");
 var port = process.argv[2];
 var app = express();
 
-//module websocket
-var wss = require("webSocketServer")//add location ^^^
+app.use("/", function(req, res) {
+    res.sendFile(".html", {root: "./"});// add file
+});
 
-//setup wss
-wss.start();
+
+var server = http.createServer(app);
+
+const wss = new websocket.Server({ server });
+
+wss.on("connection", function(ws){
+
+    ws.on("message", function incomming(message){
+        console.log("[LOG] + message");
+    })
+
+})
 
 //view engine
 app.set('views', path.join(__dirname, "/views"));
@@ -28,3 +39,12 @@ app.use("/", router);
 
 //incoming requests
 http.createServer(app).listen(port);
+
+
+
+
+//module websocket
+//var wss = require("webSocketServer")//add location ^^^
+
+//setup wss
+//wss.start();

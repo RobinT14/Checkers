@@ -1,4 +1,4 @@
-const Game = require("Game");// add location^^^
+/*const Game = require("Game");// add location^^^
 const wss = require("webSocketServer");
 
 module.exports = (function(){

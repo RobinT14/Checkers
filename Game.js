@@ -1,4 +1,4 @@
-function Game(player1){
+/*function Game(player1){
     console.log("New game of Checkers was started!");
     this.player1 = player1;
     this.player2 = null;
