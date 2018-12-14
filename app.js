@@ -9,23 +9,35 @@ var path = require("path");
 var port = process.argv[2];
 var app = express();
 
-/*app.use("/", function(req, res) {
-    res.sendFile("index.js", {root: "./"});// add file
+var server = http.createServer(app);
+
+
+const WebSocket = require('ws');
+//var connection = new WebSocket('ws://localhost:8080', ['soap', 'xmpp']);
+const wss = new WebSocket.Server({
+    port: 8080,
+
+});
+
+/*wss.on("connection", function(ws){
+    var user = new User;
 });
 
 
-var server = http.createServer(app);
+function User(ws){
+    this.ws = ws;
+    console.log("A user connected");
+    var user = this;
+}
 
-//const wss = new websocket.Server({ server });
-
-wss.on("connection", function(ws){
-
-    ws.on("message", function incomming(message){
-        console.log("[LOG] + message");
-    })
-
-})
+module.exports.broadcast = function(data){
+    if(wss == null){
+      return false;
+    }
+}
 */
+
+
 //view engine
 app.set('views', path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
@@ -43,8 +55,28 @@ http.createServer(app).listen(port);
 
 
 
+
+
+/*const ws = new WebSocket("ws://localhost:3000", {
+    perMessageDeflate: false
+});
 //module websocket
 //var wss = require("webSocketServer")//add location ^^^
 
 //setup wss
 //wss.start();
+
+
+/*app.use("/", function(req, res) {
+    res.sendFile("index.js", {root: "./"});// add file
+});
+
+
+wss.on("connection", function(ws){
+
+    ws.on("message", function incomming(message){
+        console.log("[LOG] + message");
+    })
+
+})
+*/
