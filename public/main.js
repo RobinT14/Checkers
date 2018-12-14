@@ -170,10 +170,10 @@ window.onload = function(){
             return "regular"; // regular move
         }
         //if it is a king it may travel further
-        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) == 2*Math.sqrt(2)){
-            //but still diagonal
-                return "Jump";
-            }
+        
+        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) == Math.sqrt(8)){
+                return "Jump"; // regular move
+        }
         }
         
     }
