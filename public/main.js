@@ -176,7 +176,7 @@ window.onload = function(){
                     var checkcurrentplacey = piece.place[0];
                     var amountofsteps = distancex;
                     var i = 0
-                    for(i; i = amountofsteps; i++){
+                    for(i; i < amountofsteps; i++){
                         if(Game.Hasanelement(checkcurrentplacex, checkcurrentplacey)){
                             checkcurrentplacex++;
                             checkcurrentplacey++;
