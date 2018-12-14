@@ -36,7 +36,7 @@ span::before{
 #sound{
     position: static;
     -webkit-transition: width 2s; 
-    transition: width 2s;
+    transition: width  2s;
 }
 
 p::after{
