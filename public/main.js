@@ -169,13 +169,18 @@ window.onload = function(){
         else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2) >= 0 && piece.bigPiece){
             //but still diagonal
             if(Math.abs(piece.place[0]-this.place[0]) == Math.abs(piece.place[1]-this.place[1])){
+                
                 var distancex = piece.place[1] - this.place[1];
                 var distancey = piece.place[0] - this.place[0];
-                if(distancex > 1){
-                    var checkcurrentplacex = piece.place[1];
-                    var checkcurrentplacey = piece.place[0];
+                
+                if(distancex = 1){
+                    return "regular";
+                }
+                else{
+                    var checkcurrentplacex = piece.place[1] + 1;
+                    var checkcurrentplacey = piece.place[0] + 1;
                     var amountofsteps = distancex;
-                    var i = 0
+                    var i = 1;
                     for(i; i < amountofsteps; i++){
                         if(Game.Hasanelement(checkcurrentplacex, checkcurrentplacey)){
                             checkcurrentplacex++;
