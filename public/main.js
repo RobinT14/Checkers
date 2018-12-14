@@ -72,19 +72,19 @@ window.onload = function(){
             Game.changeTurn();
             return true;
         };
-            //tests if a piece can jump
-            this.canJump = function () {
-                if(this.canEnemyJump([this.place[0] + 2, this.place[1] + 2]) ||
-                    this.canEnemyJump([this.place[0] + 2, this.place[1] - 2]) ||
-                    this.canEnemyJump([this.place[0] - 2, this.place[1] + 2]) ||
-                    this.canEnemyJump([this.place[0] - 2, this.place[1] - 2])){
+
+        //tests if piece can jump anywhere
+        this.canJumpAny = function () {
+        if(this.canEnemyJump([this.place[0]+2, this.place[1]+2]) ||
+            this.canEnemyJump([this.place[0]+2, this.place[1]-2]) ||
+            this.canEnemyJump([this.place[0]-2, this.place[1]+2]) ||
+            this.canEnemyJump([this.place[0]-2, this.place[1]-2])) {
                 return true;
-                }
-
+            }   
             return false;
-            };
+        };
 
-            //tests if enemeny could made a specific jump
+            //tests if enemy could made a specific jump
             this.canEnemyJump = function(newPlace){
                 //find the x-movement and y-movement
                 var dx = newPlace[1] - this.place[1];
@@ -110,12 +110,13 @@ window.onload = function(){
                 var tileToChecky = this.place[0] + dy/2;
     
                 //check is there is a piece and there is no piece after that piece
-                if(!Game.Hasanelement(tileToChecky, tileToChecky) && Game.Hasanelement(newPlace[0], newPlace[1])){
+                if(!Game.Hasanelement(tileToChecky, tileToCheckx) && Game.Hasanelement(newPlace[0], newPlace[1])){
                     //find which piece
                     for(pieceIndex in pieces){
                         if(pieces[pieceIndex].place[0] == tileToChecky && pieces[pieceIndex].place[1] == tileToCheckx) {
                             if(this.player != pieces[pieceIndex].player){
-                        return pieces[pieceIndex];
+                                return pieces[pieceIndex];
+                                
                             }
                         }
                     }
@@ -130,28 +131,22 @@ window.onload = function(){
                 return true;
                 }
             return false;
-            }
+            };
 
             this.remove = function() {
             //remove and delete it from the gameboard
             this.element.css("display", "none");
-                if(this.player == 1) $("#player 2").append("<div class= 'capturedPiece'>< /div");
-                    if(this.player == 2) $("#player 1").append("<div class= 'capturedPiece'>< /div");
-                        Game.board[this.place[0]][this.place[1]] = 0;
+                if(this.player == 1){
+                    $("#player 2").append("<div class= 'capturedPiece'>< /div");
+                }
+                if(this.player == 2){
+                    $("#player 1").append("<div class= 'capturedPiece'>< /div");
+                }
+                Game.board[this.place[0]][this.place[1]] = 0;
                 //reset position so it won't be taken by the for loop in de canEnemyJump method
                 this.place = [];
             }
 
-            //tests if piece can jump anywhere
-            this.canJumpAny = function () {
-            if(this.canEnemyJump([this.place[0]+2, this.place[1]+2]) ||
-            this.canEnemyJump([this.place[0]+2, this.place[1]-2]) ||
-            this.canEnemyJump([this.place[0]-2, this.place[1]+2]) ||
-            this.canEnemyJump([this.place[0]-2, this.place[1]-2])) {
-                return true;
-            }   
-            return false;
-            };
     }
 
     //calculate distance between places
@@ -162,8 +157,8 @@ window.onload = function(){
 
     //check if a move is possible
     function Tile (element, place){
-    this.element = element; // linked DOm element
-    this.place = place; //place on the board
+      this.element = element; // linked DOM element
+      this.place = place; //place on the board
     //look if tile is in range for  a possible move
         this.inRange = function(piece){
         //look if move is just 1 tile; Pythagoras 1;1;sqrt(2)
@@ -171,13 +166,17 @@ window.onload = function(){
             return "regular"; // regular move
         }
         //if it is a king it may travel further
-        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2) > 0 && piece.bigPiece){
-            return "regular";
+        else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2) >= 0 && piece.bigPiece){
+            //but still diagonal
+            if(Math.abs(piece.place[0]-this.place[0]) == Math.abs(piece.place[1]-this.place[1])){
+                return "regular";
+            }
         }
         //look if move is over an enemy; Pythagoras 2;2;sqrt(8)
         else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) ==  Math.sqrt(8)){
         return "Jump";
         }
+        
         }
         
     }
@@ -296,7 +295,7 @@ window.onload = function(){
             var piece = pieces[$('.selected').attr("id")];
             var inRange = tile.inRange(piece);
             if(inRange){
-                if(inRange == 'jump'){
+                if(inRange == 'Jump'){
                     if(piece.enemyJump(tile)){
                         piece.move(tile);
                         if(piece.canJumpAny()){

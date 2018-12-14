@@ -48,6 +48,7 @@ body {
     height: 5vw;
     background-color: black;
     position: absolute;
+    cursor: pointer;
 }
 
 .piece.selected {
