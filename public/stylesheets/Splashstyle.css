@@ -29,12 +29,12 @@ span::before{
     
 }
 
-#sound:active{
+#mute:active{
     width: 200px;
     background-color: red;
 }
 
-#sound{
+#mute{
     position: static;
     -webkit-transition: width 2s; 
     transition: width  2s;
