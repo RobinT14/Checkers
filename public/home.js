@@ -18,6 +18,16 @@ $("#Battle").on("click", function() {
    window.alert("Battle Royal Mode hasn't been released yet");
 });
 
+//mute button
+$("#mute").on("click", function() {
+    window.alert("Sound has been muted");
+ });
+
+ //stats button
+$("#stats").on("click", function() {
+    window.alert("32 Games have been played \n768 Tiles had been slain\n 16 Wins so far!");
+ });
+
 }
 
 
