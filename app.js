@@ -9,14 +9,14 @@ var path = require("path");
 var port = process.argv[2];
 var app = express();
 
-app.use("/", function(req, res) {
-    res.sendFile(".html", {root: "./"});// add file
+/*app.use("/", function(req, res) {
+    res.sendFile("index.js", {root: "./"});// add file
 });
 
 
 var server = http.createServer(app);
 
-const wss = new websocket.Server({ server });
+//const wss = new websocket.Server({ server });
 
 wss.on("connection", function(ws){
 
@@ -25,7 +25,7 @@ wss.on("connection", function(ws){
     })
 
 })
-
+*/
 //view engine
 app.set('views', path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
