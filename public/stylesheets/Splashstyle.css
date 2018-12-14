@@ -1,5 +1,8 @@
 table{
     color: blue;
+    animation-name: textcolor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
     margin: 0px;
     padding: 0px;
     border-style: dashed;
@@ -12,19 +15,35 @@ body{
     
 }
 
+img{
+    position: relative;
+}
+
 span::before{
     content: "This mode is already available!"
 }
 
 #play:hover{
     cursor: crosshair;
+    
 }
 
 #sound:active{
-
+    width: 200px;
     background-color: red;
+}
+
+#sound{
+    position: static;
+    -webkit-transition: width 2s; 
+    transition: width 2s;
 }
 
 p::after{
     content: "This mode is not yet available!";
+}
+
+@keyframes textcolor{
+    from {color: red;}
+    to {color: blue;}
 }
