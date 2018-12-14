@@ -169,9 +169,38 @@ window.onload = function(){
         else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) % Math.sqrt(2) >= 0 && piece.bigPiece){
             //but still diagonal
             if(Math.abs(piece.place[0]-this.place[0]) == Math.abs(piece.place[1]-this.place[1])){
-                return "regular";
+                var distancex = piece.place[1] - this.place[1];
+                var distancey = piece.place[0] - this.place[0];
+                if(distancex > 1){
+                    var checkcurrentplacex = piece.place[1];
+                    var checkcurrentplacey = piece.place[0];
+                    var amountofsteps = distancex;
+                    var i = 0
+                    for(i; i = amountofsteps; i++){
+                        if(Game.Hasanelement(checkcurrentplacex, checkcurrentplacey)){
+                            checkcurrentplacex++;
+                            checkcurrentplacey++;
+                        }
+                        else{
+                            if(amountofsteps == distancex){
+                                return false;
+                            }
+                            if(amountofsteps + 1 == distancex){
+                                if(Game.Hasanelement(this.place[0], this.place[1])){
+                                    return "Jump";
+                                }
+                            }
+                        }
+
+                    }
+                }
+                else{
+                    return "regular";
+                }
+            
             }
         }
+        
         //look if move is over an enemy; Pythagoras 2;2;sqrt(8)
         else if(distance(this.place[0], this.place[1], piece.place[0], piece.place[1]) ==  Math.sqrt(8)){
         return "Jump";
