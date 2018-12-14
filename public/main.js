@@ -116,6 +116,7 @@ window.onload = function(){
                         if(pieces[pieceIndex].place[0] == tileToChecky && pieces[pieceIndex].place[1] == tileToCheckx) {
                             if(this.player != pieces[pieceIndex].player){
                                 return pieces[pieceIndex];
+                                
                             }
                         }
                     }
@@ -294,7 +295,7 @@ window.onload = function(){
             var piece = pieces[$('.selected').attr("id")];
             var inRange = tile.inRange(piece);
             if(inRange){
-                if(inRange == 'jump'){
+                if(inRange == 'Jump'){
                     if(piece.enemyJump(tile)){
                         piece.move(tile);
                         if(piece.canJumpAny()){
