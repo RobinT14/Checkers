@@ -1,9 +1,13 @@
 
+//modules
 var express = require("express");
 var http = require("http");
 var path = require("path");
+//var websocket = require("ws");
 
-//var wss = require("./app/communication/webSocketServer");
+//var server = http.create.Server(app);
+
+//const wss = new websocket.Server({server});
 
 var port = process.argv[2];
 var app = express();
